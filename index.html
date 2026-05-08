@@ -24,6 +24,13 @@
                 --code-font: 'JetBrains Mono', monospace;
             }
 
+            /* --- CORREÇÃO DE RESPONSIVIDADE MOBILE --- */
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+
             body {
                 font-family: var(--tech-font);
             }
@@ -273,7 +280,7 @@
                             <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div class="hud-frame">
                                     <div class="hud-corners">
-                                        <img src="assets/profile.png" alt="Alexandre Rego" style="width: 320px; height: auto;" />
+                                        <img src="assets/profile.png" alt="Alexandre Rego" class="img-fluid" style="max-width: 320px; width: 100%; height: auto;" />
                                     </div>
                                     <div style="position: absolute; bottom: 15px; left: 15px; z-index: 4; font-family: var(--code-font); font-size: 10px; color: var(--neon-orange);">
                                         ID: AR-42<br>SYS: ONLINE
