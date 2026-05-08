@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Resumo Profissional - Alexandre Rego" />
+        <meta name="author" content="Alexandre Rego" />
+        <title>Alexandre Rego - RESUMO</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;400;700&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <style>
+            :root {
+                --neon-orange: #ff6a00;
+                --neon-orange-dim: rgba(255, 106, 0, 0.15);
+                --neon-glow: rgba(255, 106, 0, 0.6);
+                --dark-base: #030303;
+                --dark-surface: #0f0f0f;
+                --tech-font: 'Space Grotesk', sans-serif;
+                --code-font: 'JetBrains Mono', monospace;
+            }
+
+            body {
+                font-family: var(--tech-font);
+                background-color: var(--dark-base);
+                color: #e0e0e0;
+            }
+
+            /* Navbar (Mesma da index) */
+            .navbar-tech {
+                border-bottom: 2px solid var(--neon-orange);
+                background-color: #ffffff;
+            }
+
+            /* --- BACKGROUND TECH PARA O CORPO --- */
+            .bg-tech-master {
+                background-color: var(--dark-base);
+                position: relative;
+                overflow-x: hidden; /* <-- A MUDANÇA É AQUI */
+            }
+            .bg-tech-master::after {
+                content: ""; position: absolute; inset: 0;
+                background-image: 
+                    linear-gradient(var(--neon-orange-dim) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--neon-orange-dim) 1px, transparent 1px);
+                background-size: 50px 50px; opacity: 0.2; z-index: 0; pointer-events: none;
+            }
+
+            .container { position: relative; z-index: 2; }
+
+            /* --- TIPOGRAFIA & DESTAQUES --- */
+            .text-neon {
+                color: var(--neon-orange) !important;
+                text-shadow: 0 0 10px var(--neon-glow);
+            }
+
+            /* --- BOTÕES --- */
+            .btn-glow {
+                background: transparent; color: var(--neon-orange); border: 1px solid var(--neon-orange);
+                font-family: var(--tech-font); text-transform: uppercase; letter-spacing: 1px;
+                transition: 0.4s; box-shadow: 0 0 10px transparent;
+            }
+            .btn-glow:hover {
+                background: var(--neon-orange); color: var(--dark-base);
+                box-shadow: 0 0 20px var(--neon-orange);
+            }
+
+            /* --- CARDS DE RESUMO (TECH STYLE) --- */
+            .card-tech {
+                background: rgba(15, 15, 15, 0.85);
+                border: 1px solid rgba(255, 106, 0, 0.3);
+                border-left: 4px solid var(--neon-orange);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                color: #e0e0e0;
+                backdrop-filter: blur(5px);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .card-tech:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(255, 106, 0, 0.2);
+                border-color: var(--neon-orange);
+            }
+
+            .tech-box {
+                background: rgba(0, 0, 0, 0.6);
+                border: 1px dashed var(--neon-orange);
+                border-radius: 8px;
+                padding: 1.5rem;
+            }
+
+            /* Tags/Pills de Skills */
+            .skill-pill {
+                background: rgba(255, 106, 0, 0.1);
+                border: 1px solid var(--neon-orange);
+                color: var(--neon-orange);
+                padding: 10px 15px;
+                border-radius: 4px;
+                font-family: var(--code-font);
+                font-size: 0.85rem;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                transition: 0.3s;
+            }
+            .skill-pill:hover {
+                background: var(--neon-orange);
+                color: #000;
+                box-shadow: 0 0 15px var(--neon-glow);
+            }
+
+            hr.neon-divider {
+                border-top: 1px dashed var(--neon-orange);
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100 bg-tech-master">
+        <main class="flex-shrink-0">
+            <nav class="navbar navbar-expand-lg navbar-tech py-3 shadow-sm">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                        <i class="bi bi-cpu text-neon fs-4 me-2"></i>
+                        <span class="fw-bolder text-dark" style="font-family: var(--code-font);">Alexandre Rego</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link text-dark" href="index.html">&gt;_INÍCIO</a></li>
+                            <li class="nav-item"><a class="nav-link text-neon" href="resume.html">&gt;_RESUMO</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="projects.html">&gt;_PROJETOS</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="contact.html">&gt;_CONTATO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0 text-white">
+                        .<span class="text-neon d-inline">RESUMO</span>
+                    </h1>
+                    <p class="text-white-50 mt-2" style="font-family: var(--code-font);">&gt; LOAD_PROFILE_DATA...</p>
+                </div>
+                
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        
+                        <section>
+                            <div class="d-flex align-items-center justify-content-between mb-5">
+                                <h2 class="text-neon fw-bolder mb-0"><i class="bi bi-briefcase me-3"></i>Experiência - Últimas 3 Empresas</h2>
+                                <a class="btn btn-glow px-4 py-2 rounded-pill" href="#!">
+                                    <div class="d-inline-block bi bi-download me-2"></div>
+                                    Download PDF
+                                </a>
+                            </div>
+                            
+                            <div class="card card-tech rounded-4 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-neon fw-bolder mb-2" style="font-family: var(--code-font);">2025 | ATUAL Grupo PneuBras</div>
+                                                <div class="small fw-bolder text-white">Analista Administrativo Sênior</div>
+                                                <div class="small text-white-50">Analytics & Automação</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white-50">
+                                                Atuação direcionada para melhoria contínua de processos, tratamento, visualização e análise de dados e indicadores. Atuando no comitê de inovação em Inteligência Artificial como mentor de trilha de desenvolvimento. Dentre as ferramentas utilizadas no dia a dia: <strong>Python, UiPath, n8n, Google Apps Script, Power Bi, Looker Studio, Streamlit, Sankhya </strong>, extraindo inteligência e otimizando atividades.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card card-tech rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-neon fw-bolder mb-2" style="font-family: var(--code-font);">2022 | 2024 Grupo Boticário</div>
+                                                <div class="small fw-bolder text-white">Assistente Administrativo | Fin</div>                             
+                                                <div class="small text-white-50">Analytics & Automação</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white-50">
+                                                Atuação direcionada, inicialmente, na gestão de insumos e serviços para as lojas próprias da Região Metropolitana do Recife na célula CSC. Posteriormente, responsável por gestão de NF' s, dados e indicadores, visualização de dados e automação de processos e atividades. Algumas das ferramentas utilizadas no dia a dia: <strong>Python, UiPath, Google Apps Script, Looker Studio, Tableau, VBA, SQL, SAP MM, S4, Service Now </strong>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-neon fw-bolder mb-2" style="font-family: var(--code-font);">2015 | 2022 Sonda Procwork</div>
+                                                <div class="small fw-bolder text-white">Assistente Administrativo | Custos</div>                             
+                                                <div class="small text-white-50">Orçamento | Supply Chain</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white-50">
+                                                Contratado pela Sonda Procwork e atuando no Centro de Distribuição da Natura&Co de Pernambuco. Responsável pela cadeia de suprimentos de matéria prima do CD de PE, análise e controle de custos tanto operacionais, quanto administrativo. Apoio no processo de criação e revisão orçamentária do CD além de atuar na gestão de fornecedores, NF' s, documento jurídicos e manutenções no galpão acima das normas de SSMA. Algumas ferramentas utilizadas no dia a dia: <strong>Power Bi, SAP MM, GED</strong>.
+                        </section>
+                        
+                        <section>
+                            <h2 class="text-neon fw-bolder mb-4"><i class="bi bi-journal-code me-2"></i>Educação & Certificações</h2>
+                            
+                            <div class="card card-tech rounded-4 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-white fw-bolder mb-2">2026</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder text-neon">FIAP</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-white-50">Pós-Graduação</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white fw-bold">Data Analytics</div>
+                                            <div class="text-white-50 mt-2">Especialização focada em tratamento de grandes volumes de dados, estatística aplicada, machine learning e visualização avançada de informações.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card card-tech rounded-4 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-white fw-bolder mb-2">2024</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder text-neon">UNINASSAU</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-white-50">CST - Graduação</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white fw-bold">Data Science</div>
+                                            <div class="text-white-50 mt-2">Formação acadêmica em Ciência de Dados, englobando lógica de programação, banco de dados relacionais e não-relacionais, e modelos preditivos.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech rounded-4 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-white fw-bolder mb-2">2015</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder text-neon">UNINASSAU</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-white-50">MBA</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white fw-bold">Auditoria e Controladoria</div>
+                                            <div class="text-white-50 mt-2">Formação acadêmica em Ciência de Dados, englobando lógica de programação, banco de dados relacionais e não-relacionais, e modelos preditivos.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech rounded-4 mb-4">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="tech-box">
+                                                <div class="text-white fw-bolder mb-2">2010</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder text-neon">FACIPE</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-white-50">Bacharelado</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-white fw-bold">Administração de Empresas</div>
+                                            <div class="text-white-50 mt-2">Formação acadêmica em Ciência de Dados, englobando lógica de programação, banco de dados relacionais e não-relacionais, e modelos preditivos.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech rounded-4 mb-5 border-0" style="border-left: 4px solid #fff;">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-award text-white fs-2 me-4"></i>
+                                        <div>
+                                            <div class="fw-bolder text-white">Algumas Outras Formações | Certificações:</div>
+                                            <div class="text-white-50 small mt-1">
+                                                &bull; Arquiteto de RPA (UiPath - Automation Anywhare - Power Automation - Python) - Data Science Academy - 360h <br>
+                                                &bull; Formação Programação com Python e Django - Softex PE - 280h <br>
+                                                &bull; Analytics Enginner - Alura - 34h <br>
+                                                &bull; Gestão Ágil de Projetos - Alura - 77h <br>
+                                                &bull; BairesDev - Machine Learning Training - Dio - 102h <br>
+                                                &bull; Certificação ITIL 4 Foundation - Alura - 43h <br>
+                                                &bull; Apache Spark com Python - Alura - 46h <br>
+                                                &bull; Power Bi Impressionador - Hashtag - 118h <br>
+                                                &bull; DataBricks Devs para Análise de Dados - Udemy - 26h
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <hr class="neon-divider mb-5">
+                        
+                        <section>
+                            <div class="card card-tech border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    
+                                    <div class="mb-5">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="feature bg-dark border border-warning text-neon rounded-3 me-3 p-2"><i class="bi bi-cpu"></i></div>
+                                            <h3 class="fw-bolder mb-0 text-white">Core <span class="text-neon">Skills</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
+                                            <div class="col"><div class="skill-pill">Tratamento e Análise de Dados</div></div>
+                                            <div class="col"><div class="skill-pill">Automação com RPA e Scripts</div></div>
+                                            <div class="col"><div class="skill-pill">IA para Dados</div></div>
+                                            <div class="col"><div class="skill-pill">Inteligência Acionável</div></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-0">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="feature bg-dark border border-warning text-neon rounded-3 me-3 p-2"><i class="bi bi-code-square"></i></div>
+                                            <h3 class="fw-bolder mb-0 text-white">Tech <span class="text-neon">Stack</span></h3>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-3 g-3">
+                                            <div class="col"><div class="skill-pill"><i class="bi bi-braces me-2"></i>Python | SQL | Scripts</div></div>
+                                            <div class="col"><div class="skill-pill"><i class="bi bi-database me-2"></i>Banco de Dados</div></div>
+                                            <div class="col"><div class="skill-pill"><i class="bi bi-robot me-2"></i>UiPath | n8n | Power Automate</div></div>
+                                            <div class="col"><div class="skill-pill"><i class="bi bi-cloud me-2"></i>Cloud para Dados</div></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="bg-dark text-white py-4 mt-auto border-top" style="border-color: #333 !important;">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white-50" style="font-family: var(--code-font);">Sys.Copyright &copy; Alexandre Rego 2026</div></div>
+                    <div class="col-auto">
+                        <a class="small text-white-50 text-decoration-none" href="#!">Privacy_Log</a>
+                        <span class="mx-1 text-white-50">&middot;</span>
+                        <a class="small text-white-50 text-decoration-none" href="#!">Terms.cfg</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

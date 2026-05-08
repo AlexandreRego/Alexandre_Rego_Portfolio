@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Projetos - Alexandre Rego" />
+        <meta name="author" content="Alexandre Rego" />
+        <title>Alexandre Rego - EXEC.PROJETOS</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;400;700&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        
+        <style>
+            :root {
+                --neon-orange: #ff6a00;
+                --neon-orange-dim: rgba(255, 106, 0, 0.15);
+                --neon-glow: rgba(255, 106, 0, 0.6);
+                --dark-base: #030303;
+                --dark-surface: #0f0f0f;
+                --tech-font: 'Space Grotesk', sans-serif;
+                --code-font: 'JetBrains Mono', monospace;
+            }
+
+            body {
+                font-family: var(--tech-font);
+                background-color: var(--dark-base);
+                color: #e0e0e0;
+            }
+
+            /* Navbar */
+            .navbar-tech {
+                border-bottom: 2px solid var(--neon-orange);
+                background-color: #ffffff;
+            }
+
+            /* --- BACKGROUND TECH PARA O CORPO --- */
+            .bg-tech-master {
+                background-color: var(--dark-base);
+                position: relative;
+                overflow-x: hidden;
+            }
+            .bg-tech-master::after {
+                content: ""; position: absolute; inset: 0;
+                background-image: 
+                    linear-gradient(var(--neon-orange-dim) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--neon-orange-dim) 1px, transparent 1px);
+                background-size: 50px 50px; opacity: 0.2; z-index: 0; pointer-events: none;
+            }
+
+            .container { position: relative; z-index: 2; }
+
+            /* --- TIPOGRAFIA & DESTAQUES --- */
+            .text-neon {
+                color: var(--neon-orange) !important;
+                text-shadow: 0 0 10px var(--neon-glow);
+            }
+
+            /* --- BOTÕES --- */
+            .btn-glow {
+                background: transparent; color: var(--neon-orange); border: 1px solid var(--neon-orange);
+                font-family: var(--tech-font); text-transform: uppercase; letter-spacing: 1px;
+                transition: 0.4s; box-shadow: 0 0 10px transparent;
+            }
+            .btn-glow:hover {
+                background: var(--neon-orange); color: var(--dark-base);
+                box-shadow: 0 0 20px var(--neon-orange);
+            }
+            
+            /* Botão Menor para os Projetos */
+            .btn-glow-sm {
+                background: transparent; color: var(--neon-orange); border: 1px solid var(--neon-orange);
+                font-family: var(--code-font); font-size: 0.85rem; padding: 6px 15px; border-radius: 4px;
+                transition: 0.3s; text-decoration: none; display: inline-block;
+            }
+            .btn-glow-sm:hover {
+                background: rgba(255, 106, 0, 0.2); color: #fff; box-shadow: 0 0 10px var(--neon-orange);
+            }
+
+            /* --- CARDS DE PROJETOS (TECH STYLE) --- */
+            .card-tech-project {
+                background: rgba(15, 15, 15, 0.85);
+                border: 1px solid rgba(255, 106, 0, 0.2);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                color: #e0e0e0;
+                backdrop-filter: blur(5px);
+                transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .card-tech-project::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 4px;
+                height: 100%;
+                background: var(--neon-orange);
+                box-shadow: 0 0 15px var(--neon-orange);
+            }
+
+            .card-tech-project:hover {
+                transform: translateY(-5px);
+                border-color: var(--neon-orange);
+                box-shadow: 0 15px 40px rgba(255, 106, 0, 0.15);
+            }
+
+            /* --- AJUSTE PERFEITO DO ENQUADRAMENTO DA IMAGEM --- */
+            .project-img-wrapper {
+                width: 100%;
+                height: 100%;
+                min-height: 350px;
+                border-left: 1px dashed var(--neon-orange);
+                display: flex;
+            }
+            
+            .project-img-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
+                object-position: center; 
+            }
+
+            /* Filtro laranja opcional para imagens (remova a classe da tag img se não quiser o filtro) */
+            .tech-img-filter {
+                filter: grayscale(100%) sepia(100%) hue-rotate(350deg) saturate(500%) contrast(0.8);
+            }
+
+            /* Tags de ferramentas */
+            .tech-tag {
+                display: inline-block;
+                background: rgba(255, 106, 0, 0.1);
+                border: 1px solid rgba(255, 106, 0, 0.5);
+                color: var(--neon-orange);
+                font-family: var(--code-font);
+                font-size: 0.75rem;
+                padding: 4px 8px;
+                border-radius: 4px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+
+            /* Call to Action Tech */
+            .cta-tech {
+                background: radial-gradient(circle at center, rgba(255, 106, 0, 0.15) 0%, var(--dark-surface) 100%);
+                border-top: 1px dashed var(--neon-orange);
+                border-bottom: 1px dashed var(--neon-orange);
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100 bg-tech-master">
+        <main class="flex-shrink-0">
+            <nav class="navbar navbar-expand-lg navbar-tech py-3 shadow-sm">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html">
+                        <i class="bi bi-cpu text-neon fs-4 me-2"></i>
+                        <span class="fw-bolder text-dark" style="font-family: var(--code-font);">Alexandre Rego</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link text-dark" href="index.html">&gt;_INÍCIO</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="resume.html">&gt;_RESUMO</a></li>
+                            <li class="nav-item"><a class="nav-link text-neon" href="projects.html">&gt;_PROJETOS</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="contact.html">&gt;_CONTATO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0 text-white">
+                            .<span class="text-neon d-inline">PROJETOS</span>
+                        </h1>
+                        <p class="text-white-50 mt-2" style="font-family: var(--code-font);">&gt; COMPILING_SOLUTIONS_LIST...</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-10 col-xxl-9">
+                            
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: DEPLOYED]</div>
+                                            <h2 class="fw-bolder text-white">Análise de Obesidade</h2>
+                                            <p class="text-white-50">Este repositório contém a solução desenvolvida que teve o objetivo de construir um modelo de Machine Learning capaz de prever o nível de obesidade de uma pessoa a partir de um conjunto de variáveis sócio-demográficas e de hábitos de vida. Além da pipeline de modelagem, inclui-se uma aplicação preditiva em Streamlit e um painel analítico com insights sobre obesidade.</p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">Colab | VSCode | Notebook</span>
+                                                <span class="tech-tag">Machine Learning</span>
+                                                <span class="tech-tag">LLMs</span>
+                                                <span class="tech-tag">Streamlit</span>
+                                                <span class="tech-tag">Docker</span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="https://alexandrerego-analiseobesidade-srcmodelo-obs-w115vv.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar Painel - Streamlit
+                                                </a> 
+                                                <a href="https://github.com/AlexandreRego/AnaliseObesidade/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="btn-glow-sm"> 
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar Arquitetura - GitHub
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj01.png" alt="Imagem Projeto 1" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: DEPLOYED]</div>
+                                            <h2 class="fw-bolder text-white">Compatibilidade Candidato Vs Vagas</h2>
+                                            <p class="text-white-50">Este projeto permite analisar a compatibilidade entre candidatos e vagas de emprego utilizando técnicas de Processamento de Linguagem Natural (NLP) e similaridade de textos.</p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag">Python</span>
+                                                <span class="tech-tag">Colab | VSCode | Notebook</span>
+                                                <span class="tech-tag">Machine Learning</span>
+                                                <span class="tech-tag">LLM</span>
+                                                <span class="tech-tag">Streamlit</span>
+                                                <span class="tech-tag">Docker</span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="https://alexandrerego-fiap-projeto-fase-05---ml-docker-st-srcapp-09dfh5.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar Painel - Streamlit
+                                                </a> 
+                                                <a href="https://github.com/AlexandreRego/FIAP-Projeto-Fase-05---ML-Docker-Streamlit/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="btn-glow-sm"> 
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar Arquitetura - GitHub
+                                                </a>                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj02.png" alt="Imagem Projeto 2" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: DEPLOYED]</div>
+                                            <h2 class="fw-bolder text-white">Análise de Eficiência Logística</h2>
+                                            <p class="text-white-50">Dashboard interativo focado na análise de eficiência logística, utilizando tratamento avançado de dados para gerar insights sobre tempo de trânsito, custos de frete e gargalos de distribuição. Desafio proposto por uma empresa real. Empresa confidencial. Os dados foram anonimizados para preservar nome de funcionários.</p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag">Power BI</span>
+                                                <span class="tech-tag">Python | SQL</span>
+                                                <span class="tech-tag">Colab</span>
+                                                <span class="tech-tag">Google Sheet</span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTcxODgwOWEtNDg5NC00YjdhLWJmYjAtOTI3OGQ1Y2Y5OGMzIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9" target="_blank" rel="noopener noreferrer" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Acessar Dashboard - Power BI
+                                                </a> 
+                                                <!-- <a href="#" class="btn-glow-sm"> 
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Repositório - GitHub -->
+                                                </a>                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj03.png" alt="Imagem Projeto 3" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: IN PROGRESS]</div>
+                                            <h2 class="fw-bolder text-white"></h2>
+                                            <p class="text-white-50"></p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="#" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Painel a ser disponibilizado
+                                                </a>                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj04.png" alt="Imagem Projeto 4" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: IN PROGRESS]</div>
+                                            <h2 class="fw-bolder text-white"></h2>
+                                            <p class="text-white-50"></p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="#" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Painel a ser disponibilizado
+                                                </a>                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj05.png" alt="Imagem Projeto 5" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card card-tech-project rounded-4 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="row g-0 align-items-stretch">
+                                        <div class="col-md-7 p-5">
+                                            <div class="small fw-bolder text-neon mb-2" style="font-family: var(--code-font);">[STATUS: IN PROGRESS]</div>
+                                            <h2 class="fw-bolder text-white"></h2>
+                                            <p class="text-white-50"></p>
+                                            
+                                            <div class="mt-3 mb-4">
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                                <span class="tech-tag"></span>
+                                            </div>
+                                            <div class="d-inline-flex gap-3">
+                                                <a href="#" class="btn-glow-sm">
+                                                    <i class="bi bi-box-arrow-up-right me-1"></i>Painel a ser disponibilizado
+                                                </a>                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 d-none d-md-block">
+                                            <div class="project-img-wrapper h-100">
+                                                <img src="assets/proj06.png" alt="Imagem Projeto 6" style="width: 100%; height: 100%; object-fit: cover;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-5 cta-tech text-center">
+                <div class="container px-5 my-5">
+                    <h2 class="display-5 fw-bolder mb-4 text-white">Pronto para otimizar seus <span class="text-neon">sistemas?</span></h2>
+                    <p class="lead text-white-50 mb-5">Vamos transformar dados em soluções de alto impacto.</p>
+                    <a class="btn btn-glow btn-lg px-5 py-3 fs-6 fw-bolder rounded-pill" href="contact.html">
+                        <i class="bi bi-terminal me-2"></i> Iniciar Conexão
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="bg-dark text-white py-4 mt-auto border-top" style="border-color: #333 !important;">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white-50" style="font-family: var(--code-font);">Sys.Copyright &copy; Alexandre Rego 2026</div></div>
+                    <div class="col-auto">
+                        <a class="small text-white-50 text-decoration-none" href="#!">Privacy_Log</a>
+                        <span class="mx-1 text-white-50">&middot;</span>
+                        <a class="small text-white-50 text-decoration-none" href="#!">Terms.cfg</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
